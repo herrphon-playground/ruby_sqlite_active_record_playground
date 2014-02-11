@@ -1,0 +1,2 @@
+D, [2014-02-11T23:03:25.575556 #2008] DEBUG -- :   [1m[36mAlbum Load (0.0ms)[0m  [1mSELECT "albums".* FROM "albums" WHERE "albums"."title" = 'In Utero' LIMIT 1[0m
+D, [2014-02-11T23:03:25.579556 #2008] DEBUG -- :   [1m[35mAlbum Load (1.0ms)[0m  SELECT "albums".* FROM "albums" WHERE "albums"."title" = 'La-te-ra-lus' LIMIT 1
