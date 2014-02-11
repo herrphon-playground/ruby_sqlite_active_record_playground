@@ -89,3 +89,11 @@ unless Album.find_by_title('La-te-ra-lus')
     album.tracks.create(:track_number => index, :title => value) unless index === 0
   end
 end
+
+
+puts Album.find(1).tracks.length
+
+require 'pp'
+pp Album.find_by_title('La-te-ra-lus')
+
+pp Track.where(title: 'Triad')
