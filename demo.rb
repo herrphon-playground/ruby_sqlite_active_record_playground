@@ -11,16 +11,19 @@ ActiveRecord::Base.establish_connection(
 ActiveRecord::Schema.define do
   unless ActiveRecord::Base.connection.tables.include? 'albums'
     create_table :albums do |table|
-      table.column :title,     :string
-      table.column :performer, :string
+      table.string :title
+      table.string :performer
+	  table.timestamps
     end
   end
 
   unless ActiveRecord::Base.connection.tables.include? 'tracks'
     create_table :tracks do |table|
-      table.column :album_id,     :integer # foreign key <table-name-singular>_id (i.e. this is the primary key from the 'albums' table)
-      table.column :track_number, :integer
-      table.column :title,        :string
+      table.integer :album_id
+	  # foreign key <table-name-singular>_id (i.e. this is the primary key from the 'albums' table)
+      table.integer :track_number
+      table.string :title
+	  table.timestamps
     end
   end
 end
