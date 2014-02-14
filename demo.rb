@@ -90,6 +90,24 @@ unless Album.find_by_title('La-te-ra-lus')
   end
 end
 
+unless Album.find_by_title('Sticky Fingers')
+  album = Album.create(:title => 'Sticky Fingers',
+		:performer => 'The Rolling Stones')
+  album.tracks.create(:track_number => 1, :title => 'Brown Sugar')
+  album.tracks.create(:track_number => 2, :title => 'Sway')
+  album.tracks.create(:track_number => 3, :title => 'Wild Horses')
+  album.tracks.create(:track_number => 4,
+		:title => 'Can\'t You Hear Me Knocking')
+  album.tracks.create(:track_number => 5, :title => 'You Gotta Move')
+  album.tracks.create(:track_number => 6, :title => 'Bitch')
+  album.tracks.create(:track_number => 7, :title => 'I Got The Blues')
+  album.tracks.create(:track_number => 8, :title => 'Sister Morphine')
+  album.tracks.create(:track_number => 9, :title => 'Dead Flowers')
+  album.tracks.create(:track_number => 10, :title => 'Moonlight Mile')
+end
+
+
+
 
 puts Album.find(1).tracks.length
 
@@ -97,3 +115,10 @@ require 'pp'
 pp Album.find_by_title('La-te-ra-lus')
 
 pp Track.where(title: 'Triad')
+
+
+puts Album.find(1).tracks.length
+puts Album.find(2).tracks.length
+
+puts Album.find_by_title('Sticky Fingers').title
+puts Track.find_by_title('You Gotta Move').album_id
